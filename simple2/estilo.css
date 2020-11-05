@@ -1,0 +1,241 @@
+:root{
+	/* Colores para texto */
+	--color-texto-primario:#333;
+	--color-texto-secundario:#808080;
+	--color-resaltador-claro:#00FF7F;
+	--color-resaltador-oscuro: #FF1493;
+	/* Colores para fondos */
+	--color-oscuro:#333;
+	--color-claro:#FFF;
+	/* Colores para iconos */
+	--color-github:#333;
+	--color-linkedin:#0E76A8;
+	--color-google:#EA4335;
+	--color-twitter:#1DA1F2;
+	/* Tamaño de fuentes */
+	--alto-saludo:65px;
+	--alto-descripcion:25px;
+	--alto-texto-footer:20px;
+
+	--alto-saludo-chico:50px;
+	--alto-descripcion-chico:18px;
+
+	--alto-saludo-mobile:40px;
+	--alto-descripcion-mobile:16px;
+	/* Tamaño de iconos */
+	--diametro-icono-grande:40px;
+	--diametro-icono-chivo:35px;
+
+	--diametro-switch-grande: 40px;
+	--diametro-switch-chico:35px;
+}
+html, body{
+	margin:0
+	height:100%;
+	font-family:sans-serif;
+	font-weight:lighter;
+}
+*{
+	transition:.3s, border:0s;
+	box-sizing: border-box;
+}
+img{
+	width: 100%;
+}
+body{
+	display: flex;
+	flex-direction: column;
+}
+header{
+	display:flex;
+	justify-content:flex-end;
+	padding: 10pz 20px;
+}
+a{
+	text-decoration: none;
+}
+.modo-oscuro{
+	background-color: var(--color-oscuro);
+	color:white;
+}
+main{
+	flex-grow:1;
+}
+.contenedor{
+	display:flex;
+	align-items:center;
+	margin: 0 40px;
+	max-width:1400px;
+}
+.centrado{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.centrado-vertical{
+	display:flex;
+	justify-content:center;
+}
+footer{
+	display: 20px 0;
+	color:var(--color-texto-secundario);
+}
+
+.debug main, .debug header, .debug footer,
+.debug .contenedor-saludo, .debug .saludo,
+.debug .descripcion-personal,
+.debug .contenedor-redes-sociales,
+.debug .contenedor-imagen-saludo{
+	border 1px solid red;
+}
+/** =======================================
+		CONTENIDO PRINCIPAL
+	=======================================  */
+	.contenedor-saludo{
+		flex-grow:1;
+		padding: 0 40px;
+	}
+	.contenedor-imagen .saludo{
+		flex-grow:1;
+		padding: 0 40px;
+		display:flex;
+		align-items: center;
+	}
+	.saludo{
+		font-size: var(--alto-saludo);
+		color: var(--color-texto-primario);
+	}
+	.modo-oscuro .saludo{
+		color: var(--color-claro);
+	}
+	.nombre{
+		text-decoration-line:underline;
+		text-decoration-style:wavy;
+		display: inline-block;
+		padding: 0 25px;
+		color: var(--color-texto-primario);
+		background-color: var(--color-resaltado-claro);
+	}
+	.modo-oscuro .nombre{
+		color: var(--color-claro);
+		background-color:var(--color-resaltado-claro);
+	}
+	.descripcion-personal{
+		font-size: var(--alto-descripcion);
+		line-height: 40px;
+		color: var(--color-texto-secundario);
+	}
+	.modo-oscuro .descripcion-personal {
+		color:white;
+	}
+
+	/** ===============================================
+					ICONOS
+		================================================ */
+	.contenedor-redes-sociales {
+		margin: 60px 0 0;
+		display:flex;
+	}
+	.icono-red-social{
+		color: #FFF;
+		border-radius:50%;
+		width: var(--diametro-icono-grande);
+		height: var(--diametro-icono-grande);
+		margin: 0 5px;
+	}
+	.fa-github{
+		background-color:#333;
+	}
+	.modo-oscuro .fa-github{
+		background-color:#fff;
+		color: var(--color-github);
+	}
+	.fa-linkedin-in {
+		background-color:var(--color-linkedin);
+	}
+	.fa-google{
+		background-color: var(--color-google);
+	}
+	.fa-twitter{
+		background-color: var(--color-twitter);
+	}
+	.color-sol{
+		color: #D4AC0D;
+	}
+
+	/** =============================================
+						SWITCH
+		============================================= */
+	.boton-switch {
+		background: none;
+		border: none;
+		font-size: var(--diametro-switch-grande);
+		cursor:pointer;
+	}
+	.modo-oscuro .boton-modo-claro{
+		display:block;
+	}
+	.boton-modo-claro, .modo-oscuro .boton-modo-oscuro{
+		display:none;
+	}
+	/** =============================================
+					RESPONSIVE
+		============================================= */
+	@media (max-width:1450px){
+		.saludo, .nombre{
+			font-size:var(--alto-saludo-chico);
+		}
+		.nombre{
+			padding: 0 10px;
+		}
+		.descripcion-personal{
+			font-size: var(--alto-descripcion-chico);
+			line-height:30px;
+		}
+		.contenedor-redes-sociales{
+			margin:30px 0 0;
+		}
+		.contenedor-imagen-saludo{
+			padding: 0 10px;
+		}
+	}
+	@media(max-width:1100px){
+		.contenedor{
+			flex-direction:column;
+			align-items:center;
+			text-align:center;
+		}
+		.contenedor-saludo, .contenedor-imagen-saludo{
+			max-width:500px;
+		}
+		.saludo, .nombre{
+			margin-top:0;
+			font-size: var(--alto-saludo-mobile);
+		}
+		.contenedor-redes-sociaes{
+			justify-content:center;
+		}
+		.descripcion-personal{
+			font-size:var(--alto-descripcion-mobile);
+			line-height:26px;
+		}
+		.icono-red-social{
+			width: var(--diametro-icono-chico);
+			height: var(--diametro-icono-chico);
+		}
+	}
+	@media(max-width:900px){
+		.contenedor{
+			margin: 0 10px;
+		}
+		.descripcion-personal{
+			padding: 0 10px;
+		}
+		.boton-switch{
+			font-size: var(--diametro-switch-chico);
+		}
+		.contenedor-redes-sociales{
+			justify-content: center;
+			margin:40px 0 20px;
+		}
+	}
